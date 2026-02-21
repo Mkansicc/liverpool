@@ -1,109 +1,412 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Welverdiend Liverpool FC | Official News</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welverdiend Soccer League | Welverdiend Liverpool FC</title>
+  <meta name="description" content="Welverdiend Liverpool FC – News, fixtures, results, Stream A & Stream B logs, live score, sponsors & donations." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ Google AdSense (PLACEHOLDER)
+       Replace ca-pub-XXXXXXXXXXXXXXXX with your AdSense Publisher ID
+       Then create an Ad Unit and replace data-ad-slot in the ad blocks -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
+  <!-- HEADER SLIDESHOW -->
+  <header class="hero" id="top">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
 
-<!-- SLIDESHOW HEADER -->
-<header class="slideshow">
-  <div class="overlay">
-    <h1>Welverdiend Liverpool FC</h1>
-    <p>Official Soccer News & Updates</p>
-    <div class="cta-buttons">
-      <button class="btn sponsor">Sponsor Us</button>
-      <button class="btn donate">Donate</button>
+    <div class="container hero-inner">
+      <div class="brandline">
+        <img class="logo" src="images/wls-logo.png" alt="WLS Logo" onerror="this.style.display='none'">
+        <div>
+          <div class="kicker">WELVERDIEND SOCCER LEAGUE (WSL)</div>
+          <h1>Welverdiend Liverpool FC</h1>
+          <p class="sub">News • Fixtures • Results • Stream A & B Logs • Live Score</p>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="#sponsor">Sponsor</a>
+        <a class="btn success" href="#donate">Donate</a>
+        <button class="btn ghost" id="shareBtn">Share</button>
+        <a class="btn ghost" href="#admin">Admin</a>
+      </div>
+
+      <div class="mini-info">
+        <div class="pill">Enq: Senkie Nyathi • 076 8062 013</div>
+        <div class="pill">Enq: Clife Juzie • 078 084 6573</div>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- NAVIGATION -->
-<nav>
-  <a href="#news">News</a>
-  <a href="#fixtures">Fixtures</a>
-  <a href="#results">Results</a>
-  <a href="#log">Stream B Log</a>
-  <a href="#live">Live Score</a>
-  <a href="#team">Leadership</a>
-</nav>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="nav-link" href="#news">News</a>
+      <a class="nav-link" href="#live">Live Score</a>
+      <a class="nav-link" href="#league">League</a>
+      <a class="nav-link" href="#logs">Log Table</a>
+      <a class="nav-link" href="#results">Results</a>
+      <a class="nav-link" href="#fixtures">Fixtures</a>
+      <a class="nav-link" href="#leadership">Leadership</a>
+      <a class="nav-link" href="#ads">Ads</a>
+      <a class="nav-link" href="#sponsor">Sponsor/Donate</a>
+    </div>
+  </nav>
 
-<!-- NEWS -->
-<section id="news">
-  <h2>Latest News</h2>
-  <p>Welverdiend Liverpool FC continues to dominate Stream B with discipline, teamwork, and passion.</p>
-</section>
+  <!-- NEWS -->
+  <section class="section" id="news">
+    <div class="container">
+      <div class="section-head">
+        <h2>Latest News</h2>
+        <p>Updates for Welverdiend Liverpool FC and WSL.</p>
+      </div>
 
-<!-- FIXTURES -->
-<section id="fixtures">
-  <h2>Fixtures</h2>
-  <input type="text" id="fixtureSearch" placeholder="Search week (e.g. Week 5)">
-  <ul id="fixtureList">
-    <li>Week 5: Liverpool FC vs Junior Pirates</li>
-    <li>Week 6: Liverpool FC vs Stream B United</li>
-  </ul>
-</section>
+      <div class="grid cards">
+        <article class="card">
+          <div class="card-badge">Week 1</div>
+          <h3>Liverpool FC start with a clean-sheet win</h3>
+          <p>Liverpool FC beat Junior Pirates <b>2–0</b> and opened the season strong in Stream B.</p>
+          <div class="muted">Updated from WSL Week 1 sheet.</div>
+        </article>
 
-<!-- RESULTS -->
-<section id="results">
-  <h2>Results</h2>
-  <ul>
-    <li>Liverpool FC 2 – 0 Junior Pirates ✅</li>
-    <li>Liverpool FC 1 – 1 Stream B United ➖</li>
-  </ul>
+        <article class="card">
+          <div class="card-badge">League</div>
+          <h3>Stream A & B logs published</h3>
+          <p>Stream A and Stream B log tables and results are now available by week.</p>
+          <div class="muted">Use the week selector in Logs/Results sections.</div>
+        </article>
 
-  <h3>Historical Results</h3>
-  <p>2024 Season: Finished 2nd in Stream B</p>
-</section>
+        <article class="card">
+          <div class="card-badge">Support</div>
+          <h3>Sponsor & donate to support the club</h3>
+          <p>Your support helps with kits, transport, and development. Use the Sponsor/Donate section below.</p>
+          <div class="muted">Payment links can be set by admin.</div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<!-- LOG STANDING -->
-<section id="log">
-  <h2>Stream B Log Standings</h2>
-  <table>
-    <tr>
-      <th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>Pts</th>
-    </tr>
-    <tr class="highlight">
-      <td>Liverpool FC</td><td>6</td><td>4</td><td>1</td><td>1</td><td>13</td>
-    </tr>
-  </table>
-</section>
+  <!-- LIVE SCORE -->
+  <section class="section" id="live">
+    <div class="container">
+      <div class="section-head">
+        <h2>Live Score</h2>
+        <p>API-ready live scores OR manual updates from Admin.</p>
+      </div>
 
-<!-- LIVE SCORE -->
-<section id="live">
-  <h2>Live Score</h2>
-  <p>⚽ No live match at the moment</p>
-</section>
+      <div class="grid two">
+        <div class="card">
+          <h3>Manual Live Match (Recommended for local league)</h3>
+          <p class="muted">Admin can set the live match status and score so fans see updates instantly.</p>
+          <div class="livebox" id="manualLiveBox"></div>
+          <div class="row">
+            <button class="btn ghost" id="refreshLiveBtn">Refresh</button>
+            <span class="muted small">Last updated: <span id="liveUpdated">—</span></span>
+          </div>
+        </div>
 
-<!-- TEAM -->
-<section id="team">
-  <h2>Leadership & Team</h2>
+        <div class="card">
+          <h3>Live Score API Integration</h3>
+          <p class="muted">
+            If you have a provider (API-Football / Football-Data / RapidAPI), paste your API key in <b>script.js</b>.
+            For local leagues, APIs usually won’t have your matches, so manual live score is best.
+          </p>
+          <div class="api-status" id="apiStatus">API: Not configured</div>
+          <button class="btn primary" id="fetchApiBtn">Try Fetch (API)</button>
+          <pre class="codebox" id="apiOutput">No data yet.</pre>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="member">
-    <img src="images/captain.jpg">
-    <h3>Team Captain</h3>
-    <p>"We play for pride, discipline, and our community."</p>
-  </div>
+  <!-- LEAGUE TABS -->
+  <section class="section" id="league">
+    <div class="container">
+      <div class="section-head">
+        <h2>League Center</h2>
+        <p>Switch between Stream A and Stream B.</p>
+      </div>
 
-  <div class="member">
-    <img src="images/exec1.jpg">
-    <h3>Chairperson</h3>
-    <p>"Football is unity and development."</p>
-  </div>
+      <div class="tabs">
+        <button class="tab active" data-tab="streamB">Stream B</button>
+        <button class="tab" data-tab="streamA">Stream A</button>
+      </div>
 
-  <div class="member">
-    <img src="images/exec2.jpg">
-    <h3>Secretary</h3>
-    <p>"Transparency and growth drive this club forward."</p>
-  </div>
-</section>
+      <div class="filters">
+        <label class="field">
+          <span>Week</span>
+          <select id="weekSelect"></select>
+        </label>
 
-<footer>
-  <p>© 2026 Welverdiend Liverpool FC</p>
-</footer>
+        <label class="field">
+          <span>Search</span>
+          <input id="searchInput" type="text" placeholder="Search team or match (e.g. Liverpool, Week 1)" />
+        </label>
 
-<script src="script.js"></script>
+        <button class="btn ghost" id="resetBtn">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOG TABLE -->
+  <section class="section" id="logs">
+    <div class="container">
+      <div class="section-head">
+        <h2>Log Table</h2>
+        <p>Official log standings per week.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <h3 id="logTitle">Stream B • Week —</h3>
+          <div class="muted small">P, W, D, L, GF, GA, GD, Pts</div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table" id="logTable"></table>
+        </div>
+      </div>
+
+      <!-- ✅ Ad block -->
+      <div class="ad-card" id="ads">
+        <div class="ad-head">
+          <h3>Sponsored</h3>
+          <span class="muted small">Ad space</span>
+        </div>
+
+        <!-- AdSense block (placeholder) -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <p class="muted small">Tip: After AdSense approval, replace the client + slot values.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="section" id="results">
+    <div class="container">
+      <div class="section-head">
+        <h2>Results</h2>
+        <p>Weekly results + historical list.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <h3 id="resultsTitle">Stream B • Week —</h3>
+          <ul class="list" id="resultsList"></ul>
+        </div>
+
+        <div class="card">
+          <h3>Historical Results</h3>
+          <p class="muted">This will grow as you add weeks in Admin.</p>
+          <div class="history" id="historyBox"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIXTURES -->
+  <section class="section" id="fixtures">
+    <div class="container">
+      <div class="section-head">
+        <h2>Fixtures</h2>
+        <p>Weekly fixtures (search by week/team).</p>
+      </div>
+
+      <div class="card">
+        <h3 id="fixturesTitle">Stream B • Week —</h3>
+        <ul class="list" id="fixturesList"></ul>
+      </div>
+
+      <div class="share-row">
+        <button class="btn ghost" id="whatsappShare">WhatsApp Share</button>
+        <button class="btn ghost" id="facebookShare">Facebook Share</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPONSOR / DONATE -->
+  <section class="section" id="sponsor">
+    <div class="container">
+      <div class="section-head">
+        <h2>Sponsor & Donation</h2>
+        <p>Support Welverdiend Liverpool FC.</p>
+      </div>
+
+      <div class="grid three">
+        <div class="card" id="donate">
+          <h3>Donate</h3>
+          <p class="muted">Any amount helps with transport, kits, and development.</p>
+          <a class="btn success full" id="donateLink" href="#" target="_blank" rel="noopener">Donate Now</a>
+          <div class="muted small">Admin can set the link (PayPal/PayFast/SnapScan).</div>
+        </div>
+
+        <div class="card">
+          <h3>Become a Sponsor</h3>
+          <p class="muted">Get your business on our website, posters and match-day announcements.</p>
+          <a class="btn primary full" id="sponsorLink" href="#" target="_blank" rel="noopener">Sponsor Packages</a>
+          <div class="muted small">Admin can upload sponsor PDF link or WhatsApp link.</div>
+        </div>
+
+        <div class="card">
+          <h3>Contact (Sponsors)</h3>
+          <p><b>WhatsApp:</b> <span id="sponsorWhatsapp">+27XXXXXXXXX</span></p>
+          <p><b>Email:</b> <span id="sponsorEmail">your@email.com</span></p>
+          <p class="muted small">Admin can update contact details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="section" id="leadership">
+    <div class="container">
+      <div class="section-head">
+        <h2>Executive & Captain</h2>
+        <p>Leadership with messages.</p>
+      </div>
+
+      <div class="grid three">
+        <div class="card person">
+          <img src="images/captain.jpg" alt="Captain" onerror="this.src='https://via.placeholder.com/220x220?text=Captain'">
+          <h3>Team Captain</h3>
+          <p class="muted">“We play with pride, discipline, and unity for Welverdiend.”</p>
+        </div>
+
+        <div class="card person">
+          <img src="images/exec1.jpg" alt="Chairperson" onerror="this.src='https://via.placeholder.com/220x220?text=Chairperson'">
+          <h3>Chairperson</h3>
+          <p class="muted">“Our focus is development, fair play, and strong community support.”</p>
+        </div>
+
+        <div class="card person">
+          <img src="images/exec2.jpg" alt="Secretary" onerror="this.src='https://via.placeholder.com/220x220?text=Secretary'">
+          <h3>Secretary</h3>
+          <p class="muted">“Transparency and good communication help the league grow.”</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>WSL Executive (from Week 1 sheet)</h3>
+        <p class="muted">
+          Jethro Gumede (Chairperson), Seepane Emanuel (Deputy Chair), Thabiso Ndlovu (Treasure),
+          Clife Ndlovu (Secretary), Bophelo Mogakane (H. Referee), Jomo Unisi (Marketing Director),
+          Gift Ndlovu (DC), Ripfumelo Mlambo (Media), Senkie Nyathi (Admin).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMIN -->
+  <section class="section" id="admin">
+    <div class="container">
+      <div class="section-head">
+        <h2>Admin Panel</h2>
+        <p>Edit fixtures/results/log tables, set donation links, and update live match.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <h3>Login</h3>
+          <p class="muted">This is a simple browser admin (localStorage). For real security, use WordPress admin.</p>
+          <label class="field">
+            <span>Admin Password</span>
+            <input id="adminPass" type="password" placeholder="Enter password" />
+          </label>
+          <div class="row">
+            <button class="btn primary" id="adminLoginBtn">Unlock</button>
+            <button class="btn ghost" id="adminLockBtn">Lock</button>
+          </div>
+          <p class="muted small">Default password: <b>wsladmin</b> (you can change in script.js)</p>
+        </div>
+
+        <div class="card">
+          <h3>Quick Settings</h3>
+          <label class="field">
+            <span>Donate Link (PayPal/PayFast/SnapScan)</span>
+            <input id="donateInput" type="url" placeholder="https://..." />
+          </label>
+          <label class="field">
+            <span>Sponsor Link (PDF / WhatsApp / Website)</span>
+            <input id="sponsorInput" type="url" placeholder="https://..." />
+          </label>
+          <label class="field">
+            <span>Sponsor WhatsApp</span>
+            <input id="whatsappInput" type="text" placeholder="+27..." />
+          </label>
+          <label class="field">
+            <span>Sponsor Email</span>
+            <input id="emailInput" type="email" placeholder="name@email.com" />
+          </label>
+          <button class="btn success" id="saveLinksBtn">Save Settings</button>
+          <div class="muted small" id="adminMsg">Locked.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Live Match (Manual)</h3>
+        <div class="grid three">
+          <label class="field">
+            <span>Status</span>
+            <select id="liveStatus">
+              <option value="OFF">No live match</option>
+              <option value="LIVE">LIVE</option>
+              <option value="HT">Half Time</option>
+              <option value="FT">Full Time</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Match</span>
+            <input id="liveMatch" type="text" placeholder="Liverpool vs Team" />
+          </label>
+          <label class="field">
+            <span>Score</span>
+            <input id="liveScore" type="text" placeholder="2 - 0" />
+          </label>
+        </div>
+        <button class="btn primary" id="saveLiveBtn">Save Live Match</button>
+      </div>
+
+      <div class="card">
+        <h3>Edit Data (JSON)</h3>
+        <p class="muted">You can add Week 2, Week 3… here. Keep format the same.</p>
+        <textarea id="dataEditor" class="textarea" rows="18" spellcheck="false"></textarea>
+        <div class="row">
+          <button class="btn primary" id="loadDataBtn">Load Current</button>
+          <button class="btn success" id="saveDataBtn">Save Data</button>
+          <button class="btn ghost" id="resetDataBtn">Reset to Default</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Welverdiend Liverpool FC • WSL</div>
+      <div class="muted small">Built for GitHub Pages • WordPress theme version available below.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
