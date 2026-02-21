@@ -118,7 +118,7 @@ a{color:inherit}
 .filters{
   margin-top:14px;
   display:grid;
-  grid-template-columns: 160px 1fr auto;
+  grid-template-columns: 1fr 1fr auto;
   gap:12px;
   align-items:end;
 }
@@ -126,6 +126,28 @@ a{color:inherit}
 
 .field{display:grid; gap:6px}
 .field span{font-size:12px; font-weight:800; color:#24455f}
+
+.week-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.week-btn{
+  border:1px solid var(--border);
+  background:#fff;
+  padding:10px 12px;
+  border-radius:999px;
+  font-weight:800;
+  cursor:pointer;
+  transition:transform .06s ease;
+}
+.week-btn:hover{ transform:translateY(-1px); }
+.week-btn.active{
+  background:#eaf2ff;
+  border-color:#cfe1ff;
+  color:var(--brand);
+}
+
 input, select, textarea{
   width:100%;
   padding:10px 12px;
