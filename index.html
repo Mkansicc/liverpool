@@ -3,25 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Welverdiend Soccer League | Welverdiend Liverpool FC</title>
-  <meta name="description" content="Welverdiend Liverpool FC – News, fixtures, results, Stream A & Stream B logs, live score, sponsors & donations." />
+  <title>Welverdiend Soccer League | Liverpool FC Updates</title>
+  <meta name="description" content="Welverdiend Liverpool FC – News, fixtures, results, Stream A & B logs, live score, sponsors & donations." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css" />
 
-  <!-- ✅ Google AdSense (PLACEHOLDER)
-       Replace ca-pub-XXXXXXXXXXXXXXXX with your AdSense Publisher ID
-       Then create an Ad Unit and replace data-ad-slot in the ad blocks -->
+  <!-- Google AdSense (PLACEHOLDER)
+       Replace ca-pub-XXXXXXXXXXXXXXXX with your publisher id -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
     crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!-- HEADER SLIDESHOW -->
+  <!-- HERO -->
   <header class="hero" id="top">
     <div class="hero-bg" id="heroBg"></div>
     <div class="hero-overlay"></div>
@@ -45,7 +43,7 @@
 
       <div class="mini-info">
         <div class="pill">Enq: Senkie Nyathi • 076 8062 013</div>
-        <div class="pill">Enq: Clife Juzie • 078 084 6573</div>
+        <div class="pill">Enq: Clife Ndlovu • 078 084 6573</div>
       </div>
     </div>
   </header>
@@ -78,21 +76,21 @@
           <div class="card-badge">Week 1</div>
           <h3>Liverpool FC start with a clean-sheet win</h3>
           <p>Liverpool FC beat Junior Pirates <b>2–0</b> and opened the season strong in Stream B.</p>
-          <div class="muted">Updated from WSL Week 1 sheet.</div>
+          <div class="muted">Updated from Week 1 log table.</div>
         </article>
 
         <article class="card">
-          <div class="card-badge">League</div>
-          <h3>Stream A & B logs published</h3>
-          <p>Stream A and Stream B log tables and results are now available by week.</p>
-          <div class="muted">Use the week selector in Logs/Results sections.</div>
+          <div class="card-badge">Fixtures</div>
+          <h3>Fixtures loaded per week</h3>
+          <p>Click Week buttons to switch fixtures for Stream A or Stream B.</p>
+          <div class="muted">More weeks can be added in Admin.</div>
         </article>
 
         <article class="card">
           <div class="card-badge">Support</div>
-          <h3>Sponsor & donate to support the club</h3>
-          <p>Your support helps with kits, transport, and development. Use the Sponsor/Donate section below.</p>
-          <div class="muted">Payment links can be set by admin.</div>
+          <h3>Sponsor & donate</h3>
+          <p>Your support helps with kits, transport, and development.</p>
+          <div class="muted">Links can be updated in Admin.</div>
         </article>
       </div>
     </div>
@@ -103,13 +101,13 @@
     <div class="container">
       <div class="section-head">
         <h2>Live Score</h2>
-        <p>API-ready live scores OR manual updates from Admin.</p>
+        <p>API-ready live score OR manual updates from Admin.</p>
       </div>
 
       <div class="grid two">
         <div class="card">
-          <h3>Manual Live Match (Recommended for local league)</h3>
-          <p class="muted">Admin can set the live match status and score so fans see updates instantly.</p>
+          <h3>Manual Live Match</h3>
+          <p class="muted">Admin can update score during the match.</p>
           <div class="livebox" id="manualLiveBox"></div>
           <div class="row">
             <button class="btn ghost" id="refreshLiveBtn">Refresh</button>
@@ -119,10 +117,7 @@
 
         <div class="card">
           <h3>Live Score API Integration</h3>
-          <p class="muted">
-            If you have a provider (API-Football / Football-Data / RapidAPI), paste your API key in <b>script.js</b>.
-            For local leagues, APIs usually won’t have your matches, so manual live score is best.
-          </p>
+          <p class="muted">Put your API details in <b>script.js</b> to fetch live games.</p>
           <div class="api-status" id="apiStatus">API: Not configured</div>
           <button class="btn primary" id="fetchApiBtn">Try Fetch (API)</button>
           <pre class="codebox" id="apiOutput">No data yet.</pre>
@@ -131,12 +126,12 @@
     </div>
   </section>
 
-  <!-- LEAGUE TABS -->
+  <!-- LEAGUE -->
   <section class="section" id="league">
     <div class="container">
       <div class="section-head">
         <h2>League Center</h2>
-        <p>Switch between Stream A and Stream B.</p>
+        <p>Switch Stream and Week.</p>
       </div>
 
       <div class="tabs">
@@ -145,14 +140,14 @@
       </div>
 
       <div class="filters">
-        <label class="field">
+        <div class="field">
           <span>Week</span>
-          <select id="weekSelect"></select>
-        </label>
+          <div id="weekButtons" class="week-buttons" aria-label="Select week"></div>
+        </div>
 
         <label class="field">
           <span>Search</span>
-          <input id="searchInput" type="text" placeholder="Search team or match (e.g. Liverpool, Week 1)" />
+          <input id="searchInput" type="text" placeholder="Search team or match (e.g. Liverpool)" />
         </label>
 
         <button class="btn ghost" id="resetBtn">Reset</button>
@@ -165,7 +160,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Log Table</h2>
-        <p>Official log standings per week.</p>
+        <p>Log standings per week.</p>
       </div>
 
       <div class="card">
@@ -179,14 +174,13 @@
         </div>
       </div>
 
-      <!-- ✅ Ad block -->
+      <!-- ADS -->
       <div class="ad-card" id="ads">
         <div class="ad-head">
           <h3>Sponsored</h3>
           <span class="muted small">Ad space</span>
         </div>
 
-        <!-- AdSense block (placeholder) -->
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -197,7 +191,7 @@
           (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-        <p class="muted small">Tip: After AdSense approval, replace the client + slot values.</p>
+        <p class="muted small">Replace AdSense client + slot after approval.</p>
       </div>
     </div>
   </section>
@@ -218,7 +212,7 @@
 
         <div class="card">
           <h3>Historical Results</h3>
-          <p class="muted">This will grow as you add weeks in Admin.</p>
+          <p class="muted">This grows as you add weeks in Admin.</p>
           <div class="history" id="historyBox"></div>
         </div>
       </div>
@@ -230,7 +224,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Fixtures</h2>
-        <p>Weekly fixtures (search by week/team).</p>
+        <p>Click Week buttons to change fixtures per week.</p>
       </div>
 
       <div class="card">
@@ -245,7 +239,7 @@
     </div>
   </section>
 
-  <!-- SPONSOR / DONATE -->
+  <!-- SPONSOR/DONATE -->
   <section class="section" id="sponsor">
     <div class="container">
       <div class="section-head">
@@ -258,14 +252,14 @@
           <h3>Donate</h3>
           <p class="muted">Any amount helps with transport, kits, and development.</p>
           <a class="btn success full" id="donateLink" href="#" target="_blank" rel="noopener">Donate Now</a>
-          <div class="muted small">Admin can set the link (PayPal/PayFast/SnapScan).</div>
+          <div class="muted small">Admin can set PayPal/PayFast/SnapScan link.</div>
         </div>
 
         <div class="card">
           <h3>Become a Sponsor</h3>
-          <p class="muted">Get your business on our website, posters and match-day announcements.</p>
+          <p class="muted">Get your business on the website, posters, and match-day announcements.</p>
           <a class="btn primary full" id="sponsorLink" href="#" target="_blank" rel="noopener">Sponsor Packages</a>
-          <div class="muted small">Admin can upload sponsor PDF link or WhatsApp link.</div>
+          <div class="muted small">Admin can set sponsor link or WhatsApp link.</div>
         </div>
 
         <div class="card">
@@ -302,12 +296,12 @@
         <div class="card person">
           <img src="images/exec2.jpg" alt="Secretary" onerror="this.src='https://via.placeholder.com/220x220?text=Secretary'">
           <h3>Secretary</h3>
-          <p class="muted">“Transparency and good communication help the league grow.”</p>
+          <p class="muted">“Transparency and communication help the league grow.”</p>
         </div>
       </div>
 
       <div class="card">
-        <h3>WSL Executive (from Week 1 sheet)</h3>
+        <h3>WSL Executive (Week 1 sheet)</h3>
         <p class="muted">
           Jethro Gumede (Chairperson), Seepane Emanuel (Deputy Chair), Thabiso Ndlovu (Treasure),
           Clife Ndlovu (Secretary), Bophelo Mogakane (H. Referee), Jomo Unisi (Marketing Director),
@@ -328,7 +322,7 @@
       <div class="grid two">
         <div class="card">
           <h3>Login</h3>
-          <p class="muted">This is a simple browser admin (localStorage). For real security, use WordPress admin.</p>
+          <p class="muted">Simple browser admin (localStorage). For real security, use WordPress admin.</p>
           <label class="field">
             <span>Admin Password</span>
             <input id="adminPass" type="password" placeholder="Enter password" />
@@ -337,17 +331,17 @@
             <button class="btn primary" id="adminLoginBtn">Unlock</button>
             <button class="btn ghost" id="adminLockBtn">Lock</button>
           </div>
-          <p class="muted small">Default password: <b>wsladmin</b> (you can change in script.js)</p>
+          <p class="muted small">Default password: <b>wsladmin</b> (change in script.js)</p>
         </div>
 
         <div class="card">
           <h3>Quick Settings</h3>
           <label class="field">
-            <span>Donate Link (PayPal/PayFast/SnapScan)</span>
+            <span>Donate Link</span>
             <input id="donateInput" type="url" placeholder="https://..." />
           </label>
           <label class="field">
-            <span>Sponsor Link (PDF / WhatsApp / Website)</span>
+            <span>Sponsor Link</span>
             <input id="sponsorInput" type="url" placeholder="https://..." />
           </label>
           <label class="field">
@@ -389,7 +383,7 @@
 
       <div class="card">
         <h3>Edit Data (JSON)</h3>
-        <p class="muted">You can add Week 2, Week 3… here. Keep format the same.</p>
+        <p class="muted">Add Week 9–14 here later (same format).</p>
         <textarea id="dataEditor" class="textarea" rows="18" spellcheck="false"></textarea>
         <div class="row">
           <button class="btn primary" id="loadDataBtn">Load Current</button>
@@ -403,7 +397,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> Welverdiend Liverpool FC • WSL</div>
-      <div class="muted small">Built for GitHub Pages • WordPress theme version available below.</div>
+      <div class="muted small">Built for GitHub Pages • WordPress theme version available.</div>
     </div>
   </footer>
 
