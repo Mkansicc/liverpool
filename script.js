@@ -3,39 +3,123 @@
 ========================= */
 const DEFAULT_ADMIN_PASSWORD = "wsladmin";
 
-// Optional: Live Score API (example placeholders)
-// Many public APIs require RapidAPI keys, paid plans, and do not include local leagues.
+// Optional Live Score API placeholder
 const LIVE_API = {
-  enabled: false,              // set true if you add a real API
-  url: "https://example.com/live", // replace with your provider endpoint
-  headers: {
-    // "X-RapidAPI-Key": "YOUR_KEY",
-    // "X-RapidAPI-Host": "YOUR_HOST"
-  }
+  enabled: false,
+  url: "https://example.com/live",
+  headers: {}
 };
 
 /* =========================
-   DEFAULT DATA (Week 1 from your image)
+   DEFAULT DATA
+   - Fixtures: Stream A & B Week 1–8 (from your attached fixture sheets)
+   - Results/Logs: Week 1 (from your log image)
+   - You can add Week 9–14 in Admin later
 ========================= */
 const DEFAULT_DATA = {
-  weeks: ["Week 1"],
-  streams: ["streamB", "streamA"],
+  weeks: ["Week 1","Week 2","Week 3","Week 4","Week 5","Week 6","Week 7","Week 8"],
+  streams: ["streamB","streamA"],
 
   fixtures: {
     streamA: {
       "Week 1": [
-        "FC Wonderous vs Royal Tigers",
-        "Fast Eleven vs Crusaders",
-        "Highlanders vs Eastern Rangers",
-        "Movers vs Morning Stars"
+        "FC Wondrous - Royal Tigers",
+        "Fast 11 - Crusaders",
+        "Highlanders - Eastern Rangers",
+        "Movers FC - Morning Stars"
+      ],
+      "Week 2": [
+        "Crusaders - FC Wondrous",
+        "Royal Tigers - Eastern Rangers",
+        "Morning Stars - Fast 11",
+        "Movers FC - Highlanders"
+      ],
+      "Week 3": [
+        "Eastern Rangers - FC Wondrous",
+        "Crusaders - Morning Stars",
+        "Royal Tigers - Movers",
+        "Highlanders - Fast 11"
+      ],
+      "Week 4": [
+        "FC Wondrous - Morning Stars",
+        "Movers - Eastern Rangers",
+        "Highlanders - Crusaders",
+        "Fast 11 - Royal Tigers"
+      ],
+      "Week 5": [
+        "FC Wondrous - Movers",
+        "Morning Stars - Highlanders",
+        "Eastern Rangers - Fast 11",
+        "Royal Tigers - Crusaders"
+      ],
+      "Week 6": [
+        "Highlanders - FC Wondrous",
+        "Movers - Fast 11",
+        "Morning Stars - Royal Tigers",
+        "Crusaders - Eastern Rangers"
+      ],
+      "Week 7": [
+        "Fast 11 - FC Wondrous",
+        "Royal Tigers - Highlanders",
+        "Movers - Crusaders",
+        "Eastern Rangers - Morning Stars"
+      ],
+      "Week 8": [
+        "Royal Tigers - FC Wondrous",
+        "Crusaders - Fast 11",
+        "Eastern Rangers - Highlanders",
+        "Morning Stars - Movers"
       ]
     },
+
     streamB: {
       "Week 1": [
-        "Liverpool vs Junior Pirates",
-        "Labamba vs City Pillars",
-        "Welverdiend Masters vs Xihuhuri",
-        "Real Rangers vs Bhubhezi"
+        "Liverpool FC - Junior Pirates FC",
+        "Labamba FC - City Pillars FC",
+        "W/Masters FC - Xihuhuri FC",
+        "Real Rangers FC - Bhubhezi FC"
+      ],
+      "Week 2": [
+        "City Pillars - Liverpool",
+        "Junior Pirates - Xihuhuri",
+        "Bhubhezi - Labamba",
+        "Real Rangers - W/Masters"
+      ],
+      "Week 3": [
+        "Xihuhuri - Liverpool",
+        "City Pillars - Bhubhezi",
+        "Real Rangers - Junior Pirates",
+        "W/Masters - Labamba"
+      ],
+      "Week 4": [
+        "Liverpool - Bhubhezi",
+        "Xihuhuri - Real Rangers",
+        "City Pillars - W/Masters",
+        "Labamba - Junior Pirates"
+      ],
+      "Week 5": [
+        "Real Rangers - Liverpool",
+        "Bhubhezi - W/Masters",
+        "Xihuhuri - Labamba",
+        "Junior Pirates - City Pillars"
+      ],
+      "Week 6": [
+        "W/Masters - Liverpool",
+        "Labamba - Real Rangers",
+        "Bhubhezi - Junior Pirates",
+        "City Pillars - Xihuhuri"
+      ],
+      "Week 7": [
+        "Liverpool - Labamba",
+        "Junior Pirates - W/Masters",
+        "Real Rangers - City Pillars",
+        "Xihuhuri - Bhubhezi"
+      ],
+      "Week 8": [
+        "Junior Pirates - Liverpool",
+        "City Pillars - Labamba",
+        "Xihuhuri - W/Masters",
+        "Bhubhezi - Real Rangers"
       ]
     }
   },
@@ -63,32 +147,32 @@ const DEFAULT_DATA = {
     streamA: {
       "Week 1": [
         { pos: 1, team: "Morning Stars FC", p: 1, w: 1, d: 0, l: 0, gf: 4, ga: 0, gd: 4, pts: 3 },
-        { pos: 2, team: "Crusaders FC",     p: 1, w: 1, d: 0, l: 0, gf: 2, ga: 0, gd: 2, pts: 3 },
-        { pos: 3, team: "Royal Tigers FC",  p: 1, w: 1, d: 0, l: 0, gf: 2, ga: 0, gd: 2, pts: 3 },
-        { pos: 4, team: "Highlanders FC",   p: 1, w: 1, d: 0, l: 0, gf: 2, ga: 1, gd: 1, pts: 3 },
-        { pos: 5, team: "Eastern Rangers FC",p:1,w:0,d:0,l:1,gf:1,ga:2,gd:-1,pts:0 },
-        { pos: 6, team: "Fast Eleven FC",   p: 1, w: 0, d: 0, l: 1, gf: 0, ga: 2, gd: -2, pts: 0 },
-        { pos: 7, team: "FC Wonderous",     p: 1, w: 0, d: 0, l: 1, gf: 0, ga: 2, gd: -2, pts: 0 },
-        { pos: 8, team: "Movers FC",        p: 1, w: 0, d: 0, l: 1, gf: 0, ga: 4, gd: -4, pts: 0 }
+        { pos: 2, team: "Crusaders FC", p: 1, w: 1, d: 0, l: 0, gf: 2, ga: 0, gd: 2, pts: 3 },
+        { pos: 3, team: "Royal Tigers FC", p: 1, w: 1, d: 0, l: 0, gf: 2, ga: 0, gd: 2, pts: 3 },
+        { pos: 4, team: "Highlanders FC", p: 1, w: 1, d: 0, l: 0, gf: 2, ga: 1, gd: 1, pts: 3 },
+        { pos: 5, team: "Eastern Rangers FC", p: 1, w: 0, d: 0, l: 1, gf: 1, ga: 2, gd: -1, pts: 0 },
+        { pos: 6, team: "Fast Eleven FC", p: 1, w: 0, d: 0, l: 1, gf: 0, ga: 2, gd: -2, pts: 0 },
+        { pos: 7, team: "FC Wonderous", p: 1, w: 0, d: 0, l: 1, gf: 0, ga: 2, gd: -2, pts: 0 },
+        { pos: 8, team: "Movers FC", p: 1, w: 0, d: 0, l: 1, gf: 0, ga: 4, gd: -4, pts: 0 }
       ]
     },
     streamB: {
       "Week 1": [
-        { pos: 1, team: "Labamba FC",          p: 1, w: 1, d: 0, l: 0, gf: 7, ga: 1, gd: 6,  pts: 3 },
-        { pos: 2, team: "Bhubhezi FC",         p: 1, w: 1, d: 0, l: 0, gf: 4, ga: 0, gd: 4,  pts: 3 },
-        { pos: 3, team: "Liverpool FC",        p: 1, w: 1, d: 0, l: 0, gf: 2, ga: 0, gd: 2,  pts: 3 },
-        { pos: 4, team: "Xihuhuri FC",         p: 1, w: 1, d: 0, l: 0, gf: 4, ga: 3, gd: 1,  pts: 3 },
+        { pos: 1, team: "Labamba FC", p: 1, w: 1, d: 0, l: 0, gf: 7, ga: 1, gd: 6, pts: 3 },
+        { pos: 2, team: "Bhubhezi FC", p: 1, w: 1, d: 0, l: 0, gf: 4, ga: 0, gd: 4, pts: 3 },
+        { pos: 3, team: "Liverpool FC", p: 1, w: 1, d: 0, l: 0, gf: 2, ga: 0, gd: 2, pts: 3 },
+        { pos: 4, team: "Xihuhuri FC", p: 1, w: 1, d: 0, l: 0, gf: 4, ga: 3, gd: 1, pts: 3 },
         { pos: 5, team: "Welverdiend Masters", p: 1, w: 0, d: 0, l: 1, gf: 3, ga: 4, gd: -1, pts: 0 },
-        { pos: 6, team: "Junior Pirates FC",   p: 1, w: 0, d: 0, l: 1, gf: 0, ga: 2, gd: -2, pts: 0 },
-        { pos: 7, team: "Real Rangers",        p: 1, w: 0, d: 0, l: 1, gf: 0, ga: 4, gd: -4, pts: 0 },
-        { pos: 8, team: "City Pillars FC",     p: 1, w: 0, d: 0, l: 1, gf: 1, ga: 7, gd: -6, pts: 0 }
+        { pos: 6, team: "Junior Pirates FC", p: 1, w: 0, d: 0, l: 1, gf: 0, ga: 2, gd: -2, pts: 0 },
+        { pos: 7, team: "Real Rangers", p: 1, w: 0, d: 0, l: 1, gf: 0, ga: 4, gd: -4, pts: 0 },
+        { pos: 8, team: "City Pillars FC", p: 1, w: 0, d: 0, l: 1, gf: 1, ga: 7, gd: -6, pts: 0 }
       ]
     }
   },
 
   settings: {
-    donateLink: "https://paypal.me/yourclub",     // replace
-    sponsorLink: "https://wa.me/27XXXXXXXXX",     // replace
+    donateLink: "https://paypal.me/yourclub",
+    sponsorLink: "https://wa.me/27XXXXXXXXX",
     sponsorWhatsapp: "+27XXXXXXXXX",
     sponsorEmail: "your@email.com"
   },
@@ -104,27 +188,18 @@ const DEFAULT_DATA = {
 /* =========================
    STORAGE HELPERS
 ========================= */
-const KEY_DATA = "wsl_site_data_v1";
-const KEY_UNLOCK = "wsl_admin_unlocked_v1";
+const KEY_DATA = "wsl_site_data_v2";
+const KEY_UNLOCK = "wsl_admin_unlocked_v2";
 
 function loadData() {
   const raw = localStorage.getItem(KEY_DATA);
   if (!raw) return structuredClone(DEFAULT_DATA);
   try { return JSON.parse(raw); } catch { return structuredClone(DEFAULT_DATA); }
 }
-function saveData(data) {
-  localStorage.setItem(KEY_DATA, JSON.stringify(data, null, 2));
-}
-function resetData() {
-  saveData(structuredClone(DEFAULT_DATA));
-  return loadData();
-}
-function isUnlocked() {
-  return localStorage.getItem(KEY_UNLOCK) === "true";
-}
-function setUnlocked(v) {
-  localStorage.setItem(KEY_UNLOCK, v ? "true" : "false");
-}
+function saveData(d) { localStorage.setItem(KEY_DATA, JSON.stringify(d, null, 2)); }
+function resetData() { saveData(structuredClone(DEFAULT_DATA)); return loadData(); }
+function isUnlocked() { return localStorage.getItem(KEY_UNLOCK) === "true"; }
+function setUnlocked(v) { localStorage.setItem(KEY_UNLOCK, v ? "true" : "false"); }
 
 /* =========================
    UI STATE
@@ -149,31 +224,36 @@ setHeroBg();
 setInterval(setHeroBg, 4500);
 
 /* =========================
-   WEEK SELECT
+   WEEK BUTTONS
 ========================= */
-function buildWeekSelect() {
-  const sel = document.getElementById("weekSelect");
-  if (!sel) return;
-  sel.innerHTML = "";
+function buildWeekButtons() {
+  const wrap = document.getElementById("weekButtons");
+  if (!wrap) return;
+
+  wrap.innerHTML = "";
   (data.weeks || []).forEach(w => {
-    const opt = document.createElement("option");
-    opt.value = w;
-    opt.textContent = w;
-    sel.appendChild(opt);
+    const btn = document.createElement("button");
+    btn.className = "week-btn" + (w === activeWeek ? " active" : "");
+    btn.type = "button";
+    btn.textContent = w;
+    btn.dataset.week = w;
+    wrap.appendChild(btn);
   });
-  sel.value = activeWeek;
 }
 
 /* =========================
-   RENDER FUNCTIONS
+   RENDER
 ========================= */
+function streamLabel() {
+  return activeStream === "streamA" ? "Stream A" : "Stream B";
+}
+
 function renderLog() {
   const title = document.getElementById("logTitle");
   const table = document.getElementById("logTable");
   if (!title || !table) return;
 
-  const streamName = activeStream === "streamA" ? "Stream A" : "Stream B";
-  title.textContent = `${streamName} • ${activeWeek}`;
+  title.textContent = `${streamLabel()} • ${activeWeek}`;
 
   const rows = data.logs?.[activeStream]?.[activeWeek] || [];
   const thead = `
@@ -184,11 +264,10 @@ function renderLog() {
       </tr>
     </thead>
   `;
-
   const tbody = rows.map(r => {
-    const highlight = (r.team || "").toLowerCase().includes("liverpool") ? " class='highlight'" : "";
+    const hi = (r.team || "").toLowerCase().includes("liverpool") ? " class='highlight'" : "";
     return `
-      <tr${highlight}>
+      <tr${hi}>
         <td>${r.pos}</td><td><b>${r.team}</b></td>
         <td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
         <td>${r.gf}</td><td>${r.ga}</td><td>${r.gd}</td><td><b>${r.pts}</b></td>
@@ -196,7 +275,10 @@ function renderLog() {
     `;
   }).join("");
 
-  table.innerHTML = thead + `<tbody>${tbody}</tbody>`;
+  table.innerHTML = thead + `<tbody>${tbody || ""}</tbody>`;
+  if (!rows.length) {
+    table.innerHTML = thead + `<tbody><tr><td colspan="10" class="muted">No log table for this week yet (add it in Admin).</td></tr></tbody>`;
+  }
 }
 
 function renderResults() {
@@ -205,13 +287,11 @@ function renderResults() {
   const history = document.getElementById("historyBox");
   if (!title || !list || !history) return;
 
-  const streamName = activeStream === "streamA" ? "Stream A" : "Stream B";
-  title.textContent = `${streamName} • ${activeWeek}`;
+  title.textContent = `${streamLabel()} • ${activeWeek}`;
 
   const items = data.results?.[activeStream]?.[activeWeek] || [];
-  list.innerHTML = items.map(x => `<li>${x}</li>`).join("") || `<li class="muted">No results yet.</li>`;
+  list.innerHTML = items.map(x => `<li>${x}</li>`).join("") || `<li class="muted">No results yet for this week (add in Admin).</li>`;
 
-  // Build simple historical list across weeks (for this stream)
   const allWeeks = data.weeks || [];
   const histHtml = allWeeks.map(w => {
     const rs = data.results?.[activeStream]?.[w] || [];
@@ -227,11 +307,10 @@ function renderFixtures() {
   const list = document.getElementById("fixturesList");
   if (!title || !list) return;
 
-  const streamName = activeStream === "streamA" ? "Stream A" : "Stream B";
-  title.textContent = `${streamName} • ${activeWeek}`;
+  title.textContent = `${streamLabel()} • ${activeWeek}`;
 
   const items = data.fixtures?.[activeStream]?.[activeWeek] || [];
-  list.innerHTML = items.map(x => `<li>${x}</li>`).join("") || `<li class="muted">No fixtures yet.</li>`;
+  list.innerHTML = items.map(x => `<li>${x}</li>`).join("") || `<li class="muted">No fixtures yet for this week.</li>`;
 }
 
 function renderSettings() {
@@ -253,34 +332,23 @@ function renderManualLive() {
 
   const live = data.liveManual || DEFAULT_DATA.liveManual;
   const ts = live.updatedAt ? new Date(live.updatedAt) : null;
-
   updated.textContent = ts ? ts.toLocaleString() : "—";
 
   if (live.status === "OFF") {
     box.innerHTML = `<b>No live match</b><div class="muted">Check back later.</div>`;
     return;
   }
-
   box.innerHTML = `
     <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <div>
-        <div class="muted small">Status</div>
-        <div style="font-weight:900;font-size:18px">${live.status}</div>
-      </div>
-      <div>
-        <div class="muted small">Match</div>
-        <div style="font-weight:900;font-size:18px">${live.match || "—"}</div>
-      </div>
-      <div>
-        <div class="muted small">Score</div>
-        <div style="font-weight:900;font-size:18px">${live.score || "—"}</div>
-      </div>
+      <div><div class="muted small">Status</div><div style="font-weight:900;font-size:18px">${live.status}</div></div>
+      <div><div class="muted small">Match</div><div style="font-weight:900;font-size:18px">${live.match || "—"}</div></div>
+      <div><div class="muted small">Score</div><div style="font-weight:900;font-size:18px">${live.score || "—"}</div></div>
     </div>
   `;
 }
 
 function renderAll() {
-  buildWeekSelect();
+  buildWeekButtons();
   renderLog();
   renderResults();
   renderFixtures();
@@ -289,36 +357,35 @@ function renderAll() {
   document.getElementById("year").textContent = new Date().getFullYear();
 }
 
-/* =========================
-   TABS + FILTERS
-========================= */
 function setActiveStream(stream) {
   activeStream = stream;
   document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.tab === stream));
   renderAll();
 }
 
+function setActiveWeek(w) {
+  activeWeek = w;
+  document.querySelectorAll(".week-btn").forEach(b => b.classList.toggle("active", b.dataset.week === w));
+  renderAll();
+}
+
+/* =========================
+   SEARCH FILTER (DISPLAY ONLY)
+========================= */
 function applySearchFilter() {
   const q = (document.getElementById("searchInput").value || "").toLowerCase().trim();
-  if (!q) {
-    renderAll();
-    return;
-  }
+  if (!q) return renderAll();
 
-  // Filter fixtures/results/log for display only (does not change stored data)
   const fixtures = (data.fixtures?.[activeStream]?.[activeWeek] || []).filter(x => x.toLowerCase().includes(q));
   const results = (data.results?.[activeStream]?.[activeWeek] || []).filter(x => x.toLowerCase().includes(q));
   const logs = (data.logs?.[activeStream]?.[activeWeek] || []).filter(r => (r.team || "").toLowerCase().includes(q));
 
-  // Render filtered fixtures
-  const fl = document.getElementById("fixturesList");
-  fl.innerHTML = fixtures.map(x => `<li>${x}</li>`).join("") || `<li class="muted">No matches found.</li>`;
+  document.getElementById("fixturesList").innerHTML =
+    fixtures.map(x => `<li>${x}</li>`).join("") || `<li class="muted">No matches found.</li>`;
 
-  // Render filtered results
-  const rl = document.getElementById("resultsList");
-  rl.innerHTML = results.map(x => `<li>${x}</li>`).join("") || `<li class="muted">No results found.</li>`;
+  document.getElementById("resultsList").innerHTML =
+    results.map(x => `<li>${x}</li>`).join("") || `<li class="muted">No results found.</li>`;
 
-  // Render filtered log
   const table = document.getElementById("logTable");
   const thead = `
     <thead>
@@ -343,40 +410,28 @@ function applySearchFilter() {
    SHARE BUTTONS
 ========================= */
 function shareText() {
-  const streamName = activeStream === "streamA" ? "Stream A" : "Stream B";
-  return `WSL ${activeWeek} • ${streamName}\nCheck Welverdiend Liverpool FC updates: ${location.href}`;
+  return `WSL ${activeWeek} • ${streamLabel()}\nWelverdiend Liverpool FC updates: ${location.href}`;
 }
 function openWhatsApp() {
-  const url = `https://wa.me/?text=${encodeURIComponent(shareText())}`;
-  window.open(url, "_blank");
+  window.open(`https://wa.me/?text=${encodeURIComponent(shareText())}`, "_blank");
 }
 function openFacebook() {
-  // FB share uses URL
-  const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`;
-  window.open(url, "_blank");
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`, "_blank");
 }
 
 /* =========================
-   ADMIN PANEL (localStorage)
+   ADMIN
 ========================= */
 function setAdminMessage(msg) {
   const el = document.getElementById("adminMsg");
   if (el) el.textContent = msg;
 }
-
-function lockAdmin() {
-  setUnlocked(false);
-  setAdminMessage("Locked.");
-}
+function lockAdmin() { setUnlocked(false); setAdminMessage("Locked."); refreshAdminUI(); }
 function unlockAdmin(pass) {
-  if (pass === DEFAULT_ADMIN_PASSWORD) {
-    setUnlocked(true);
-    setAdminMessage("Unlocked ✅");
-  } else {
-    setAdminMessage("Wrong password ❌");
-  }
+  if (pass === DEFAULT_ADMIN_PASSWORD) { setUnlocked(true); setAdminMessage("Unlocked ✅"); }
+  else { setAdminMessage("Wrong password ❌"); }
+  refreshAdminUI();
 }
-
 function refreshAdminUI() {
   const unlocked = isUnlocked();
   const editor = document.getElementById("dataEditor");
@@ -385,20 +440,16 @@ function refreshAdminUI() {
   const whatsappInput = document.getElementById("whatsappInput");
   const emailInput = document.getElementById("emailInput");
 
-  [editor, donateInput, sponsorInput, whatsappInput, emailInput].forEach(x => {
-    if (x) x.disabled = !unlocked;
-  });
+  [editor, donateInput, sponsorInput, whatsappInput, emailInput].forEach(x => { if (x) x.disabled = !unlocked; });
 
   if (donateInput) donateInput.value = data.settings?.donateLink || "";
   if (sponsorInput) sponsorInput.value = data.settings?.sponsorLink || "";
   if (whatsappInput) whatsappInput.value = data.settings?.sponsorWhatsapp || "";
   if (emailInput) emailInput.value = data.settings?.sponsorEmail || "";
 }
-
 function loadEditor() {
   const editor = document.getElementById("dataEditor");
-  if (!editor) return;
-  editor.value = JSON.stringify(data, null, 2);
+  if (editor) editor.value = JSON.stringify(data, null, 2);
 }
 function saveEditor() {
   const editor = document.getElementById("dataEditor");
@@ -407,17 +458,20 @@ function saveEditor() {
     const parsed = JSON.parse(editor.value);
     data = parsed;
     saveData(data);
-    activeWeek = data.weeks?.[0] || activeWeek;
+
+    // keep activeWeek valid
+    if (!data.weeks.includes(activeWeek)) activeWeek = data.weeks[0] || "Week 1";
+
     renderAll();
     refreshAdminUI();
     setAdminMessage("Data saved ✅");
-  } catch (e) {
+  } catch {
     setAdminMessage("Invalid JSON ❌");
   }
 }
 
 /* =========================
-   LIVE API FETCH (optional)
+   LIVE API (OPTIONAL)
 ========================= */
 async function fetchLiveApi() {
   const status = document.getElementById("apiStatus");
@@ -447,39 +501,32 @@ async function fetchLiveApi() {
 document.addEventListener("click", (e) => {
   const t = e.target;
 
-  // Tabs
   if (t.classList?.contains("tab")) setActiveStream(t.dataset.tab);
+  if (t.classList?.contains("week-btn")) setActiveWeek(t.dataset.week);
 
-  // Share
   if (t.id === "whatsappShare") openWhatsApp();
   if (t.id === "facebookShare") openFacebook();
+
   if (t.id === "shareBtn") {
-    if (navigator.share) {
-      navigator.share({ title: "WSL Updates", text: shareText(), url: location.href }).catch(()=>{});
-    } else {
-      openWhatsApp();
-    }
+    if (navigator.share) navigator.share({ title: "WSL Updates", text: shareText(), url: location.href }).catch(()=>{});
+    else openWhatsApp();
   }
 
-  // Live refresh
-  if (t.id === "refreshLiveBtn") {
-    data = loadData();
-    renderManualLive();
-  }
-
-  // API fetch
+  if (t.id === "refreshLiveBtn") { data = loadData(); renderManualLive(); }
   if (t.id === "fetchApiBtn") fetchLiveApi();
 
-  // Admin login/lock
+  if (t.id === "resetBtn") {
+    document.getElementById("searchInput").value = "";
+    renderAll();
+  }
+
   if (t.id === "adminLoginBtn") unlockAdmin(document.getElementById("adminPass").value || "");
   if (t.id === "adminLockBtn") lockAdmin();
 
-  // Admin editor load/save/reset
   if (t.id === "loadDataBtn") loadEditor();
   if (t.id === "saveDataBtn") saveEditor();
   if (t.id === "resetDataBtn") { data = resetData(); renderAll(); refreshAdminUI(); setAdminMessage("Reset ✅"); }
 
-  // Save settings links
   if (t.id === "saveLinksBtn") {
     if (!isUnlocked()) return setAdminMessage("Locked.");
     data.settings.donateLink = document.getElementById("donateInput").value.trim();
@@ -491,7 +538,6 @@ document.addEventListener("click", (e) => {
     setAdminMessage("Settings saved ✅");
   }
 
-  // Save manual live match
   if (t.id === "saveLiveBtn") {
     if (!isUnlocked()) return setAdminMessage("Locked.");
     data.liveManual.status = document.getElementById("liveStatus").value;
@@ -506,13 +552,6 @@ document.addEventListener("click", (e) => {
 
 document.addEventListener("input", (e) => {
   if (e.target?.id === "searchInput") applySearchFilter();
-});
-
-document.addEventListener("change", (e) => {
-  if (e.target?.id === "weekSelect") {
-    activeWeek = e.target.value;
-    renderAll();
-  }
 });
 
 // Initial render
