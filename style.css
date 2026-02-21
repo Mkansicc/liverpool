@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f8fb;
+  color: #333;
+}
+
+.slideshow {
+  height: 60vh;
+  background: url("images/slide1.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.45);
+  color: white;
+  height: 100%;
+  text-align: center;
+  padding-top: 120px;
+}
+
+nav {
+  background: white;
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #004aad;
+  font-weight: bold;
+}
+
+section {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.sponsor { background: gold; }
+.donate { background: #00c853; color: white; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.highlight {
+  background: #e3f2fd;
+}
+
+.member {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.member img {
+  width: 140px;
+  border-radius: 50%;
+}
+
+footer {
+  background: #004aad;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
